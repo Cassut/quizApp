@@ -287,9 +287,6 @@ h3 {
 }
 
 @media (max-width: 680px) {
-  body {
-    overflow: scroll;
-  }
   .container {
     margin-top: 0.5rem;
     width: 95%;
@@ -297,6 +294,14 @@ h3 {
   }
 
   .question {
-    flex: 0.6;
+    flex: 0.8;
+    overflow: scroll;
+  }
+
+  .question--num {
+    transform: translate(-50%, -85%);
+    width: 90px;
+    border-radius: 1rem;
+    height: 50px;
   }
 }
