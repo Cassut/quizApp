@@ -288,12 +288,12 @@ h3 {
 
 @media (max-width: 680px) {
   body {
-    background-color: lightblue;
+    overflow: scroll;
   }
-
   .container {
+    margin-top: 0.5rem;
     width: 95%;
-    height: 85%;
+    height: 80%;
   }
 
   .question {
