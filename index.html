@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="question--num inner"></div>
+      <div class="question inner">
+        <p class="display--question"></p>
+      </div>
+      <div class="answers inner">
+        <div class="option q1" id="1"></div>
+        <div class="option q2" id="2"></div>
+        <div class="option q3" id="3"></div>
+        <div class="option q4" id="4"></div>
+      </div>
+      <button class="submit--btn">Enter</button>
+    </div>
+    <div class="modal"></div>
+    <div class="innermodal">
+      <h1 class="welcome">Press Start</h1>
+      <button class="start--btn">Start</button>
+    </div>
+
+    <div class="correct bars"><div class="load--correct"></div></div>
+    <div class="progress bars"><div class="load--progress"></div></div>
+
+    <div class="nothing-selected"></div>
+    <div class="results--card">
+      <h3>Results</h3>
+      <div>
+        <p><strong>Score:</strong> <span class="display--score">00/10</span></p>
+        <p><strong>Time:</strong> <span class="display--time"><span class="minutes">00</span>:<span class="seconds">00</span></p>
+      </div>
+      <button class="start--btn restart"></button>
+    </div>
+  </body>
+</html>
