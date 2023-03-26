@@ -22,6 +22,7 @@ window.addEventListener("load", () => {
         return;
       }
       questions = { ...data };
+      return questions;
     } catch (error) {
       /* If a promise is now rejected it will enter into this block */
       console.log(error);
@@ -46,7 +47,7 @@ window.addEventListener("load", () => {
 
     // setTimeout(() => console.log(questions), 5000);
   }
-  fetchQuesitons();
+
   /* grabbing document elements */
   const modal = document.querySelector(".modal");
   const innerModal = document.querySelector(".innermodal");
@@ -89,7 +90,6 @@ window.addEventListener("load", () => {
   function checkAnswer(index) {
     if (currentIndex <= 9) {
       if (currentSelection === questions[`${index}`].correctAnswer) {
-        console.log("Correct");
         overall++;
         r.style.setProperty("--correctBar", `${overall * 10}%`);
       }
@@ -117,7 +117,6 @@ window.addEventListener("load", () => {
     an2.textContent = onLoad[1];
     an3.textContent = onLoad[2];
     an4.textContent = onLoad[3];
-    console.log(questions[`${currentIndex}`].correctAnswer);
   }
 
   function toggleResults() {
@@ -149,19 +148,19 @@ window.addEventListener("load", () => {
     }, 1000);
   }
 
-  document.querySelector(".start--btn").addEventListener("click", () => {
-    if (!initGame) {
-      initGame = true;
-    }
-    gameTimer();
-    toggelModal();
-    nextQuestion(questions, currentIndex);
+  fetchQuesitons().then(() => {
+    document.querySelector(".start--btn").addEventListener("click", () => {
+      if (!initGame) {
+        initGame = true;
+      }
+      gameTimer();
+      toggelModal();
+      nextQuestion(questions, currentIndex);
+    });
   });
 
   submitBtn.addEventListener("click", function (e) {
-    // r.style.setProperty("--progess", `${currentIndex * 10}%`);
     if (!checked) return;
-    console.log(currentIndex);
     if (currentIndex === 8) {
       submitBtn.innerHTML = "Finish";
     } else if (currentIndex === 9) {
